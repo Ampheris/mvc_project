@@ -21,6 +21,7 @@ if (session()->missing('gameUser')) {
     session(['gameGameRounds' => 0]);
     session(['gameDiceThrown' => false]);
     session(['gameComputerScore' => 0]);
+    session(['gameHighscore' => 0]);
 }
 
 /*$_SESSION['game'] = $_SESSION['game'] ?? [

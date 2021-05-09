@@ -1,8 +1,10 @@
 <?php
 
+use Ampheris\ampController\Books;
 use Ampheris\ampController\DiceGame;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HelloWorldController;
+use App\Models\Highscore;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +27,11 @@ Route::get('/session', function () {
    session()->flush();
    return redirect('/');
 });
+
+Route::get('/highscore', function () {
+    $dice21 = Highscore::find(1);
+
+    return view('highscore', ['Dice21' => $dice21]);
+});
+
+Route::get('/books', [Books::class, 'index']);

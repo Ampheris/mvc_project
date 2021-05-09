@@ -27,6 +27,7 @@ class AmpControllerDiceViewTest extends TestCase
 
     /**
      * Check that the controller returns a response.
+     * @runInSeparateProcess
      * @preserveGlobalState disabled
      */
     public function testControllerReturnsResponse()

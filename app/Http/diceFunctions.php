@@ -6,6 +6,7 @@ namespace Ampheris\Functions;
 
 use Ampheris\Dice\DiceHand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Functions.
@@ -85,6 +86,11 @@ function checkScore()
 
     if ($userScore == 21 or ($userScore < 21 and $computerScore > 21)) {
         session(['gameWinner' => 'User']);
+        if ($userScore == 21) {
+            DB::table('highscores')
+                ->where('id', 1)
+                ->update(['score' => DB::raw(('score + 1'))]);
+        }
     }
 
     // If computer has score 21 it wins, even if user got 21 in score.
