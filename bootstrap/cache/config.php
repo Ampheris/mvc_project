@@ -270,8 +270,8 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => '127.0.0.1',
-        'port' => '33061',
+        'host' => 'blu-ray.student.bth.se',
+        'port' => '3306',
         'database' => 'macl16',
         'username' => 'macl16',
         'password' => 'bGHtQteG8R2W',
@@ -290,8 +290,8 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => '127.0.0.1',
-        'port' => '33061',
+        'host' => 'blu-ray.student.bth.se',
+        'port' => '3306',
         'database' => 'macl16',
         'username' => 'macl16',
         'password' => 'bGHtQteG8R2W',
@@ -305,8 +305,8 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => '127.0.0.1',
-        'port' => '33061',
+        'host' => 'blu-ray.student.bth.se',
+        'port' => '3306',
         'database' => 'macl16',
         'username' => 'macl16',
         'password' => 'bGHtQteG8R2W',
