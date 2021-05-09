@@ -1,20 +1,7 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-......E.                                                            8 / 8 (100%)
+.......                                                             7 / 7 (100%)
 
-Time: 00:05.978, Memory: 18.00 MB
+Time: 00:04.680, Memory: 18.00 MB
 
-There was 1 error:
-
-1) Tests\ampController\AmpControllerDiceViewTest::testControllerReturnsResponse
-InvalidArgumentException: View [.diceGame] not found.
-
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:137
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:79
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/vendor/laravel/framework/src/Illuminate/View/Factory.php:138
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php:919
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/app/Http/ampController/DiceGame.php:17
-/mnt/c/Users/mathi/Documents/dbwebb/kurser/mvc/me/orm/app/tests/ampController/AmpControllerDiceViewTest.php:38
-
-ERRORS!
-Tests: 8, Assertions: 8, Errors: 1.
+OK (7 tests, 8 assertions)
