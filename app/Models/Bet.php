@@ -3,8 +3,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Bet
+class Bet extends Model
 {
-
+    use HasFactory;
 }

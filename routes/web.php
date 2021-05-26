@@ -2,6 +2,7 @@
 
 use Ampheris\ampController\Books;
 use Ampheris\ampController\DiceGame;
+use App\Models\Bet;
 use App\Models\Highscore;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +35,9 @@ Route::get('/session', function () {
 // Route for the highscores, has database table directly connected to it in the Route.
 Route::get('/highscore', function () {
     $dice21 = Highscore::find(1);
+    $bets = Bet::find(1);
 
-    return view('highscore', ['Dice21' => $dice21]);
+    return view('highscore', ['Dice21' => $dice21, 'Bets' => $bets]);
 });
 
 // Route for the books, has a controller instead of a directly connected database table.

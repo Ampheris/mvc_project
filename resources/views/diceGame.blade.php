@@ -21,18 +21,8 @@ if (session()->missing('gameUser')) {
     session(['gameDiceThrown' => false]);
     session(['gameComputerScore' => 0]);
     session(['gameHighscore' => 0]);
+    session(['gameBetOn' => '']);
 }
-
-/*$_SESSION['game'] = $_SESSION['game'] ?? [
-        'isInitiated' => false,
-        'user' => serialize($userInit),
-        'userScore' => 0,
-        'winner' => 'None',
-        'computer' => serialize($computer),
-        'computerScore' => 0,
-        'gameRounds' => 0,
-        'diceThrown' => false
-    ];*/
 
 /**
  * @param DiceHand $user
@@ -42,13 +32,17 @@ $user = session()->get('gameUser');
 ?>
 @section('content')
     <h1>Dice 21 Game, round <?= session()->get('gameGameRounds'); ?></h1>
-    <?php if (session()->get('gameIsInitiated') == false) { ?>
+    <?php if (session()->get('gameIsInitiated') == false and session()->get('gameBetOn') == '') { ?>
+    <h2>Bet $5! Who will win?</h2>
+    <button class="betting btn btn-outline-warning" value="0">You</button>
+    <button class="betting btn btn-outline-warning" value="1">No one</button>
+    <button class="betting btn btn-outline-warning" value="2">Computer</button>
     <h2>Choose 1 or 2 dices</h2>
-    <button class="num-dices" value="1">One dice</button>
-    <button class="num-dices" value="2">Two dices</button>
+    <button class="num-dices btn btn-outline-warning" value="1">One dice</button>
+    <button class="num-dices btn btn-outline-warning" value="2">Two dices</button>
     <?php } ?>
 
-    <?php if (session()->get('gameWinner') == 'None') { ?>
+    <?php if (session()->get('gameWinner') == 'None' && session()->get('gameIsInitiated') == true) { ?>
     <h2>Throw your dice/dices!</h2>
     <?php if (session()->get('gameDiceThrown') == true) { ?>
     <p>Dice(s) thrown:</p>
@@ -57,8 +51,8 @@ $user = session()->get('gameUser');
     </p>
     <?php } ?>
     <p>Your current score: <?= session()->get('gameUserScore'); ?></p>
-    <button id="throw-dices">Throw dice/dices</button>
-    <button id="stop">Stop</button>
+    <button id="throw-dices" class="btn btn-outline-warning">Throw dice/dices</button>
+    <button id="stop" class="btn btn-outline-warning">Stop</button>
     <?php } ?>
 
     <?php if (session()->get('gameWinner') != 'None') { ?>
@@ -72,7 +66,7 @@ $user = session()->get('gameUser');
     <?php } elseif (session()->get('gameWinner') == 'NoWinner') { ?>
     <p>Sorry, no one has won the round!</p>
     <?php } ?>
-    <button id="restart">Restart</button>
+    <button id="restart" class="btn btn-outline-warning">Restart</button>
     <?php } ?>
 
     <script type="text/javascript">
@@ -83,6 +77,22 @@ $user = session()->get('gameUser');
                 type: 'POST',
                 url: '{{url('/diceGame/updateSession')}}',
                 data: {'command': 'setDices', 'number': parseInt(num)},
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function () {
+                    location.reload();
+                }
+            });
+        });
+
+        $('.betting').click(function () {
+            const num = $(this).val();
+
+            $.ajax({
+                type: 'POST',
+                url: '{{url('/diceGame/updateSession')}}',
+                data: {'command': 'betting', 'number': parseInt(num)},
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
