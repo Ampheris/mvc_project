@@ -120,6 +120,7 @@ function checkScore()
                     'won' => DB::raw(('won + 1')),
                     'played' => DB::raw(('played + 1'))
                     ]);
+
             checkBet(0);
         }
     }
