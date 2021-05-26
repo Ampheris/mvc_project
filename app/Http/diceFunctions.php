@@ -147,7 +147,7 @@ function checkBet(int $num) {
         DB::table('bets')
             ->where('id', 1)
             ->update([
-                'money' => DB::raw(('money + 5'))
+                'money' => DB::raw(('money + 10'))
             ]);
         // if bet is lost
     } else {
@@ -168,7 +168,7 @@ function resetGame()
     session(['gameIsInitiated' => false]);
     session(['gameWinner' => 'None']);
     session(['gameDiceThrown' => false]);
-
+    session(['gameBetOn' => -1 ]);
 }
 
 /**

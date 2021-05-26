@@ -25,13 +25,13 @@ to it but a direct connection to a database table--}}
         </div>
 
         <div>
-            <h2 class="display-3"><?php $Bets['totalMoney'] - $Bets['moneyLost'] ?></h2>
-            <p class="p-0">Money won</p>
+            <h2 class="display-3">{{$Bets['money']}}</h2>
+            <p class="p-0">Current money</p>
         </div>
 
         <div>
             <h2 class="display-3">{{$Bets['moneyLost']}}</h2>
-            <p class="p-0">Money won</p>
+            <p class="p-0">Money lost</p>
         </div>
     </div>
     <?php }?>
