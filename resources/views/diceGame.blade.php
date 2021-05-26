@@ -32,17 +32,21 @@ $user = session()->get('gameUser');
 ?>
 @section('content')
     <h1>Dice 21 Game, round <?= session()->get('gameGameRounds'); ?></h1>
-    <?php if (session()->get('gameIsInitiated') == false and session()->get('gameBetOn') == '') { ?>
+    <?php if (session()->get('gameBetOn') == '') { ?>
     <h2>Bet $5! Who will win?</h2>
     <button class="betting btn btn-outline-warning" value="0">You</button>
     <button class="betting btn btn-outline-warning" value="1">No one</button>
     <button class="betting btn btn-outline-warning" value="2">Computer</button>
+    <?php } ?>
+
+    <?php if (session()->get('gameIsInitiated') == false and session()->get('gameBetOn') != '') {?>
     <h2>Choose 1 or 2 dices</h2>
     <button class="num-dices btn btn-outline-warning" value="1">One dice</button>
     <button class="num-dices btn btn-outline-warning" value="2">Two dices</button>
     <?php } ?>
 
-    <?php if (session()->get('gameWinner') == 'None' && session()->get('gameIsInitiated') == true) { ?>
+    <?php if (session()->get('gameWinner') == 'None' && session()->get('gameIsInitiated') == true
+    && session()->get('gameBetOn') != '') { ?>
     <h2>Throw your dice/dices!</h2>
     <?php if (session()->get('gameDiceThrown') == true) { ?>
     <p>Dice(s) thrown:</p>

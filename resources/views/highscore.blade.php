@@ -15,18 +15,24 @@ to it but a direct connection to a database table--}}
     </p>
 
     <?php if ($Dice21['score'] != 0) {?>
+    <br>
     <h3>Dice 21 Betting</h3>
     <p class="lead"> You have betted {{$Bets['numberOfBets']}} times</p>
-    <dl class="row">
-        <dt class="col-sm-3">Total money bet:</dt>
-        <dd class="col-sm-9">{{$Bets['totalMoney']}}</dd>
+    <div class="card-body d-flex justify-content-around flex-wrap">
+        <div>
+            <h2 class="display-3">{{$Bets['totalMoney']}}</h2>
+            <p class="p-0">Total money bet</p>
+        </div>
 
-        <dt class="col-sm-3">Money won:</dt>
-        <dd class="col-sm-9"><?php $Bets['totalMoney'] - $Bets['moneyLost'] ?></dd>
+        <div>
+            <h2 class="display-3"><?php $Bets['totalMoney'] - $Bets['moneyLost'] ?></h2>
+            <p class="p-0">Money won</p>
+        </div>
 
-        <dt class="col-sm-3">Money lost:</dt>
-        <dd class="col-sm-9">{{$Bets['moneyLost']}}</dd>
-
-    </dl>
+        <div>
+            <h2 class="display-3">{{$Bets['moneyLost']}}</h2>
+            <p class="p-0">Money won</p>
+        </div>
+    </div>
     <?php }?>
 @endsection
