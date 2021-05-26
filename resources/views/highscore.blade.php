@@ -20,8 +20,8 @@ to it but a direct connection to a database table--}}
     <p class="lead"> You have betted {{$Bets['numberOfBets']}} times</p>
     <div class="card-body d-flex justify-content-around flex-wrap">
         <div>
-            <h2 class="display-3">{{$Bets['totalMoney']}}</h2>
-            <p class="p-0">Total money bet</p>
+            <h2 class="display-3">{{$Bets['numberOfBets'] * 5}}</h2>
+            <p class="p-0">Money won</p>
         </div>
 
         <div>

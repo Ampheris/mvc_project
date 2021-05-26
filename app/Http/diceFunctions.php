@@ -119,7 +119,7 @@ function checkScore()
                     'score' => DB::raw(('score + 1')),
                     'won' => DB::raw(('won + 1')),
                     'played' => DB::raw(('played + 1'))
-                    ]);
+                ]);
 
             checkBet(0);
         }
@@ -141,7 +141,8 @@ function checkScore()
  * @param int $num
  * Checks if the bet is won or not and updates the database with correct values.
  */
-function checkBet(int $num) {
+function checkBet(int $num)
+{
     $bettedOn = session()->get('gameBetOn');
 
     if ($bettedOn == $num) {
@@ -150,6 +151,7 @@ function checkBet(int $num) {
             ->update([
                 'money' => DB::raw(('money + 10'))
             ]);
+
         // if bet is lost
     } else {
         DB::table('bets')
@@ -157,6 +159,12 @@ function checkBet(int $num) {
             ->update([
                 'money' => DB::raw(('money - 5')),
                 'moneyLost' => DB::raw('moneyLost - 5')
+            ]);
+
+        DB::table('highscores')
+            ->where('id', 1)
+            ->update([
+                'played' => DB::raw(('played + 1'))
             ]);
     }
 }
@@ -169,7 +177,7 @@ function resetGame()
     session(['gameIsInitiated' => false]);
     session(['gameWinner' => 'None']);
     session(['gameDiceThrown' => false]);
-    session(['gameBetOn' => -1 ]);
+    session(['gameBetOn' => -1]);
 }
 
 /**
