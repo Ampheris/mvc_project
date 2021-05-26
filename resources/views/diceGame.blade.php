@@ -32,8 +32,6 @@ $user = session()->get('gameUser');
 ?>
 @section('content')
     <h1>Dice 21 Game, round <?= session()->get('gameGameRounds'); ?></h1>
-    <?php dump(session()->get('gameBetOn'))?>
-
     <?php if (session()->get('gameBetOn') == -1 and session()->get('gameIsInitiated') == false) { ?>
     <h2>Bet $5! Who will win?</h2>
     <button class="betting btn btn-outline-warning" value="0">You</button>

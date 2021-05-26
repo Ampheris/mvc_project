@@ -2,7 +2,7 @@
 
 <p>Travis</p>
 
-[![Build Status](https://travis-ci.com/Ampheris/mvc_project.svg?branch=main)](https://www.travis-ci.com/canax/router)
+[![Build Status](https://travis-ci.com/Ampheris/mvc_project.svg?branch=main)](https://travis-ci.com/Ampheris/mvc_project)
 
 <p>Scrutinizer</p>
 
