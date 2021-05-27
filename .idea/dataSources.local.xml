@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PS-211.7142.44">
+    <data-source name="@blu-ray.student.bth.se" uuid="597c06b6-c8a3-425b-8c4b-0a3fa5ec0384">
+      <database-info product="MariaDB" version="10.3.27-MariaDB-0+deb10u1-log" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.6.0" dbms="MARIADB" exact-version="10.3.27" exact-driver-version="2.6">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>macl16</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="macl16" />
+        </introspection-scope>
+      </schema-mapping>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <ssh-config-id>9a25a368-e9e5-4b46-9c09-86b341d62ffc</ssh-config-id>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>
