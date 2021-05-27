@@ -6,7 +6,7 @@
 
 <p>Scrutinizer</p>
 
-[![Build Status](https://scrutinizer-ci.com/g/Ampheris/framework/badges/build.png?b=main)](https://scrutinizer-ci.com/g/canax/database/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/Ampheris/framework/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/canax/router/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Ampheris/framework/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/canax/database/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Ampheris/mvc_project/badges/build.png?b=main)](https://scrutinizer-ci.com/g/canax/database/build-status/master) [![Code Coverage](https://scrutinizer-ci.com/g/Ampheris/mvc_project/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/canax/router/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Ampheris/mvc_project/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/canax/database/?branch=master)
 
 # Mitt projekt
 
@@ -47,4 +47,3 @@ Du kan även behöva köra följande kod för att se till så allting är rensat
 även följande för att uppdatera databasen
 
 `php artisan migrate`
-
