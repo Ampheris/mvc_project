@@ -20,17 +20,17 @@ to it but a direct connection to a database table--}}
     <p class="lead"> You have betted {{$Bets['numberOfBets']}} times</p>
     <div class="card-body d-flex justify-content-around flex-wrap">
         <div>
-            <h2 class="display-3">{{$Bets['numberOfBets'] * 5}}</h2>
+            <h2 class="display-3">${{$Dice21['score'] * 10}}</h2>
             <p class="p-0">Money won</p>
         </div>
 
         <div>
-            <h2 class="display-3">{{$Bets['money']}}</h2>
+            <h2 class="display-3">${{$Bets['money']}}</h2>
             <p class="p-0">Current money</p>
         </div>
 
         <div>
-            <h2 class="display-3">{{$Bets['moneyLost']}}</h2>
+            <h2 class="display-3">${{$Bets['moneyLost']}}</h2>
             <p class="p-0">Money lost</p>
         </div>
     </div>
